@@ -25,4 +25,5 @@ def substrings_with_k_unique_chars(s, k):
 if __name__ == "__main__":
     print(substrings_with_k_unique_chars("abcabc", 3))
     print(substrings_with_k_unique_chars("aa", 1))
+    print(substrings_with_k_unique_chars("awaglknagawunagwkwagl", 4))
 
