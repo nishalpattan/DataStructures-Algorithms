@@ -10,6 +10,6 @@ class Solution:
         for num in nums:
             hash_set.add(num)
 
-        for i in range(len(nums) + 1):
-            if i not in hash_set:
-                return i
+        for idx in range(len(nums) + 1):
+            if idx not in hash_set:
+                return idx
