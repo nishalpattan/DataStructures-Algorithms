@@ -4,25 +4,45 @@ class ListNode:
         self.next = None
 
 
-class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        number = self.toInteger(l1) + self.toInteger(l2)
-        return number
+def add_linked_lists(l1,l2):
+    if l1 is None or l2 is None:
+        return None
+    stack1 = list()
+    stack2 = list()
+    stack3 = list()
+    temp = l3 = ListNode(0)
+    carry = 0
+    while l1:
+        stack1.append(l1.value)
+        l1 = l1.next
+    while l2:
+        stack2.append(l2.value)
+        l2 = l2.next
+    while stack1 or stack2:
+        if stack1 and stack2:
+            curr_sum = stack1.pop() + stack2.pop() + carry
+        elif stack1:
+            curr_sum = stack1.pop() + carry
+        elif stack2:
+            curr_sum = stack2.pop() + carry
+        carry = curr_sum // 10
+        stack3.append(curr_sum % 10)
+    while stack3:
+        temp.next = ListNode(stack3.pop())
+        temp = temp.next
+    return l3.next
 
-    def toInteger(self, l1:ListNode) -> int:
-        number = 0
-        increment = 1
-        while l1.next:
-            number = number + (l1.value * increment)
-            increment = increment * 10
-            l1= l1.next
-        return number
 
-if __name__ == "__main__" :
-    l1 = ListNode(1)
+
+
+
+
+if __name__ == "__main__":
+    l1=ListNode(1)
     l1.next = ListNode(2)
-    l2 = ListNode(3)
-    l2.next = ListNode(4)
-    s = Solution()
-    print(s.toInteger(l1))
-
+    l2 = ListNode(1)
+    l2.next = ListNode(3)
+    result = add_linked_lists(l1, l2)
+    while result:
+        print(result.value)
+        result = result.next
