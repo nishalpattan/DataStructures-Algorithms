@@ -5,6 +5,7 @@ What if you cannot use additional data structures?
 
 def isUnique(Str):
     """
+    method uses hash set, by adding chars in it and checking if char already present
     :param Str:
     :return: bool
     Time Complexity : O(N)
@@ -19,6 +20,10 @@ def isUnique(Str):
 
 def isUnique_NoAddition_DataStructure(Str):
     """
+    method uses sorting of string,
+    which brings duplicates next to each other char
+    and traversing through sorted string determines unique characters
+
     Time Complexity: O(NlogN)
     Space Complexity : O(1)
     :param Str:
