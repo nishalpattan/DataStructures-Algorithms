@@ -4,7 +4,7 @@ def twoNumberSum(array, targetSum):
     Space Complexity : O(n)
     :param array:
     :param targetSum:
-    :return:[index1, index2]
+    :return:[number1, number2]
     """
 	hash_map = dict()
 	for num in array:
@@ -26,6 +26,12 @@ def twoNumberSumSortedArray(array, targetSum):
 	else if the sum is less than target sum, increment start index , following the increasing order of sorted array
 	else if the sum is greater than target sum, decrement end index.
 	"""
+	start = 0
+	end = len(array)-1
+	while start <= end:
+		curr_sum = array[start]
+		if curr_sum == targetSum:
+			return[]
 
 
 if __name__ == "__main__":
